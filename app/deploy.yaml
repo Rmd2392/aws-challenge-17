@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: repte17-web
+  labels:
+    app: repte17-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: repte17-web
+  template:
+    metadata:
+      labels:
+        app: repte17-web
+    spec:
+      containers:
+      - name: web
+        image: 018762268361.dkr.ecr.us-east-1.amazonaws.com/repte17-web:1.0
+        ports:
+        - containerPort: 80
